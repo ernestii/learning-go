@@ -11,8 +11,8 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/ernestii/gostuff/controllers"
-	"github.com/ernestii/gostuff/models"
+	"github.com/ernestii/learning-go/1-first-api-with-mongo/controllers"
+	"github.com/ernestii/learning-go/1-first-api-with-mongo/models"
 	"github.com/gorilla/mux"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/bson/primitive"

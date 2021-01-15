@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"net/http"
 
-	"github.com/ernestii/gostuff/models"
+	"github.com/ernestii/learning-go/1-first-api-with-mongo/models"
 )
 
 
