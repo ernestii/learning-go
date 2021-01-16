@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+<div id="counter"></div>
+<script>
+  const counter = document.getElementById("counter")
+
+  let cReceived = 0
+  setInterval(() => {
+    counter.textContent = `${cReceived}/sec`
+    cReceived = 0
+  }, 1000)
+
+  let socket = new WebSocket("ws://192.168.2.25:8080/ws")
+  console.log("Attempting Conn")
+
+  socket.onopen = () => {
+    console.log("Connected!")
+    socket.send("Hi From Client")
+  }
+
+  socket.onclose = (event) => {
+    console.log("Societ Closed Connection", event)
+  }
+
+  socket.onerror = (error) => {
+    console.log("Socket Error", error)
+  }
+
+  socket.onmessage = (msg) => {
+    // socket.send(msg.data)
+    cReceived++
+  }
+</script>
+</body>
+</html>
